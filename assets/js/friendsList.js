@@ -1,7 +1,6 @@
 var FriendsList = {
 
 	init: function(){
-		console.log('TITTIESQ!!');
 		FriendsList.events();
 		FriendsList.getFriends();
 
@@ -26,9 +25,7 @@ var FriendsList = {
 			},
 			dataType: 'jsonp',
 			success: function( result ) {
-				console.log(result);
 				if(!result.success){
-					console.log('incorrect login');
 				}else{
 					FriendsList.storeLogin(result);
 				}
@@ -46,11 +43,8 @@ var FriendsList = {
 			},
 			dataType: 'jsonp',
 			success: function( results ) {
-				console.log(results + '!!!!!1');
 				if(!results.success){
-					console.log('failed');
 				}else{
-					console.log('worked');
 					FriendsList.insertUsers(results);
 				}
 
