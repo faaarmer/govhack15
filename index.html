@@ -18,7 +18,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-
     <meta name="theme-color" content="#ffffff">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -69,7 +68,7 @@
                     c4.363,0.438,9.395,5.019,7.983,9.983c1.333-0.363,2.583-1.695,2.861-3.705c2.809,3.913,2.573,8.578,1.256,11.587
                     c1.251-0.011,3.147-1.706,3.552-3.428C24.279,23.689,18.452,29,14.908,29z"/>
                   </svg>
-                   <span class="bushfires">Bushfires</span>
+                  <span class="bushfires">Bushfires</span>
                 </div>
               </div>
               <div class="tiles">
@@ -102,7 +101,7 @@
                         <path fill="#52FFAF" d="M28,3.151C28,1.963,27.037,1,25.849,1H3.151C1.963,1,1,1.963,1,3.151v18.697C1,23.037,1.963,24,3.151,24
                           h22.698C27.037,24,28,23.037,28,21.849V3.151z M21,14h-5v5h-3v-5H8v-3h5V6h3v5h5V14z"/>
                         </svg>
-                         <span class="emergency">Emergency</span>
+                        <span class="emergency">Emergency</span>
                       </div>
                     </div>
                   </div>
@@ -134,11 +133,16 @@
                     <span></span>
                   </div>
                 </div>
-
+                <div class="row">
+                  <div class="form-group">
+                    <input id="fullName" class="form-control people-form" type="fullName" name="fullName" placeholder="Name">
+                    <input id="phone" class="form-control people-form" type="phone" name="phone" placeholder="Phone">
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
                 <div class="row button">
                   <button class="add-button">Add</button>
                 </div>
-
               </div>
             </body>
             <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -146,6 +150,7 @@
             <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
             <script src="assets/js/map_test.js"></script>
             <script src="assets/js/checkLoggedIn.js"></script>
+            <script src="assets/js/friendList.js"></script>
             <script type="text/javascript">
             $('.menu-button').click(function(){
             $('.leftPanel').toggle("slide");
@@ -156,10 +161,8 @@
             $('.fa-caret-right').click(function(){
             $('.right-panel').hide("slide"), $('.right-menu').show();
             });
-
             $('.tiles').click(function(){
             $(this).toggleClass('active');
             });
-
             </script>
           </html>
