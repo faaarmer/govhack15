@@ -17,7 +17,7 @@ var Registration = {
 
 
 		$.ajax({
-			url: '../assets/php/registration.php',
+			url: 'assets/php/registration.php',
 			type: 'get',
 			data: {
 				email: email,
