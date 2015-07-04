@@ -1,0 +1,41 @@
+CREATE TABLE users (
+	uId INT NOT NULL AUTO_INCREMENT,
+	fName VARCHAR(103),
+	lName VARCHAR(103),
+	email VARCHAR(100),
+	password VARCHAR(100),
+	phone VARCHAR(50),
+	user_img VARCHAR(1000),
+	PRIMARY KEY (uId)
+);
+
+CREATE TABLE relation (
+	rId INT NOT NULL AUTO_INCREMENT,
+	fName VARCHAR(103),
+	lName VARCHAR(103),
+	email VARCHAR(100),
+	phone VARCHAR(50),
+	uId INT(50),
+	PRIMARY KEY (rId),
+	FOREIGN KEY (uId) REFERENCES users(uId) ON DELETE CASCADE
+);
+
+CREATE TABLE status (
+	sId INT NOT NULL AUTO_INCREMENT,
+	sCode INT(2),
+	sTimestamp VARCHAR(103),
+	lat VARCHAR(100),
+	lon VARCHAR(100),
+	uId INT(50),
+	PRIMARY KEY (sId),
+	FOREIGN KEY (uId) REFERENCES users(uId) ON DELETE CASCADE
+);
+
+CREATE TABLE sCodes (
+	sCode INT(3),
+	codeDesc VARCHAR(250),
+	PRIMARY KEY (sCode)
+);
+
+
+
