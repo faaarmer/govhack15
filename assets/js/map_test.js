@@ -53,6 +53,7 @@ var Map_test = {
 
 	    cartodb.createLayer(Map_test.map, bushFiresURL).addTo(Map_test.map).on('done', function(layer) {
 	    	Map_test.bushFiresLayer = layer;
+	    	Map_test.bushFiresLayer.hide();
 	    }).on('error', function(error) {
 	      console.log(error);
 	    });
