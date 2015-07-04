@@ -106,7 +106,7 @@ html, body {
   z-index: 10;
   color: #52ffaf;
   width: 2em;
-  background-color: rgba(71, 71, 71, 0.5);
+  background-color: rgba(72, 72, 72, 0.5);
   height: 100%;
   text-align: center;
   font-size: 1.5em;
@@ -144,7 +144,7 @@ html, body {
     margin-top: .5em;
     color: #52ffaf;
     font-weight: 300;
-    border-radius: 8px;
+    border-radius: 5px;
     margin-left: auto;
     margin-right: auto; }
     .right-panel .check-button:hover {
@@ -153,38 +153,6 @@ html, body {
       transition: .15s ease-in; }
   .right-panel .right-status {
     text-align: center; }
-
-.friends-header {
-  margin-bottom: 50px; }
-
-#friends .friend-list-item .friend-name {
-  position: relative;
-  bottom: 6px;
-  color: #FFF; }
-#friends .friend-list-item .btn-xs {
-  margin-right: 5px;
-  transition: all 0.2s ease-in; }
-#friends .friend-list-item #safetyButton {
-  background-color: #333333;
-  color: #52ffaf; }
-  #friends .friend-list-item #safetyButton:hover {
-    background-color: #52ffaf;
-    color: #333333; }
-#friends .friend-list-item #awaitingResponse {
-  background-color: transparent;
-  color: #cccccc; }
-#friends .friend-list-item #okStatus {
-  background-color: #52ffaf;
-  color: #333333; }
-#friends .friend-list-item #helpStatus {
-  background-color: #ff133f;
-  color: #FFF; }
-#friends .friend-list-item #deleteButton {
-  background-color: transparent;
-  color: #333333;
-  transition: all 0.2s ease-in; }
-  #friends .friend-list-item #deleteButton:hover {
-    color: #df002a; }
 
 input.form-control.add-person {
   width: 45%;
@@ -286,6 +254,11 @@ h1.main-header {
   font-weight: 300;
   margin-bottom: 25px; }
 
+h3.sec-header {
+  color: #fcfcfc;
+  font-weight: 300;
+  text-align: center; }
+
 .ok_button, .help_button {
   -webkit-border-radius: 3;
   -moz-border-radius: 3;
@@ -307,8 +280,42 @@ h1.main-header {
 .help_button:hover {
   color: #fcfcfc !important; }
 
-p.about_naya {
+p.about_naya, .text-register, .emergency-numbers, .emergency-titles {
   font-size: 12px;
   color: #fcfcfc; }
+
+.text-register {
+  font-size: 13px !important;
+  text-align: center;
+  margin-bottom: 30px; }
+
+.emergency-titles {
+  margin-bottom: 4px; }
+
+.emergency-numbers {
+  color: #52ffaf;
+  float: left;
+  margin: 5px 0px 0px 30px;
+  font-size: 14px; }
+
+a.register {
+  color: #52ffaf;
+  font-size: 18px;
+  display: table; }
+
+a.register:hover {
+  color: #52ffaf; }
+
+.contact-icons {
+  height: 30px;
+  float: left;
+  vertical-align: middle; }
+
+.emergency-services {
+  display: inline-block;
+  margin-top: 30px; }
+
+.im-ok, .help-me {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
