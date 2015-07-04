@@ -1,0 +1,31 @@
+input.form-control.add-person {
+    width: 45%;
+    margin: 10px 0px;
+    display: initial;
+    background-color: $main-grey;
+    color: $main-color;
+    border-color: $light-black;
+    &:focus {
+        border-color: $main-color;
+    }
+}
+
+.row.button {
+    text-align: center;
+}
+
+.overwrite {
+    margin: 0 !important;
+}
+
+button.add-button {
+    font-family: $font-family;
+    font-weight: 300;
+    width: 90%;
+    background-color: transparent;
+    border: 1px solid $main-color;
+    border-radius: 5px;
+    color: $main-color;
+    transition: all 0.2s ease-in;
+    &:hover { background-color: $main-color; color: $main-grey;}
+}

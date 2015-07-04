@@ -154,8 +154,21 @@ html, body {
   .right-panel .right-status {
     text-align: center; }
 
+input.form-control.add-person {
+  width: 45%;
+  margin: 10px 0px;
+  display: initial;
+  background-color: #484848;
+  color: #52ffaf;
+  border-color: #333333; }
+  input.form-control.add-person:focus {
+    border-color: #52ffaf; }
+
 .row.button {
   text-align: center; }
+
+.overwrite {
+  margin: 0 !important; }
 
 button.add-button {
   font-family: "Open Sans", "Helvetica Neue", sans-serif;

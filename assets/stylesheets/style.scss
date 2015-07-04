@@ -200,25 +200,13 @@ html, body {
     }
 }
 
-.row.button {
-    text-align: center;
-}
-
-
-button.add-button {
-    font-family: $font-family;
-    font-weight: 300;
-    width: 90%;
-    background-color: transparent;
-    border: 1px solid $main-color;
-    border-radius: 5px;
-    color: $main-color;
-    transition: all 0.2s ease-in;
-    &:hover { background-color: $main-color; color: $main-grey;}
-}
 
 
 
 
+
+
+
+@import 'forms';
 // Login styles
 @import 'login';
