@@ -20,6 +20,9 @@ var FriendsList = {
 		    return false;
 		  }
 		});
+
+
+		$('body').on('touch click', '.friend-list-item .btn', FriendsList.sendMessage);
 	},
 
 	addFriends: function(){
@@ -79,9 +82,11 @@ var FriendsList = {
 			},
 			dataType: 'jsonp',
 			success: function( results ) {
+				console.log(results);
 				if(!results.success){
 				}else{
 					FriendsList.insertUsers(results);
+					// if(results.friends.sCode)
 				}
 
 			}
@@ -95,10 +100,41 @@ var FriendsList = {
 		$.each(friends, function(index, friend){
 			var friend_id = friend.rId;
 			var friendName = friend.fullName;
-			var friendsHtml = '<div class="row"><div class="col-xs-6 friend" data-rid="' + friend_id + '"><h6>' + friendName + '</h6></div><div class="col-xs-6 right-status"><span id="safety-status"></span><p class="delete-button">X</p></div></div>';
+			var friendsHtml = '<div class="row friend-list-item"><div class="cool col-xs-6" data-rid="' + friend_id + '"><h6 class="friend-name">' + friendName + '</h6></div><div class="col-xs-6 right-status"><span class="safety-status"><button id="safetyButton" class="btn btn-xs">Check safety</button><button id="awaitingResponse" class="btn btn-xs hide">Waiting...</button><button id="okStatus" class="btn btn-xs hide"><span class="glyphicon glyphicon-ok"></span> I\'m Safe</button><button id="helpStatus" class="btn btn-xs hide"> I need help!</button></span><button id="deleteButton" class="btn btn-xs"><span class="glyphicon glyphicon-remove"></span></button></div></div>';
 			//'<li class="friends-list" data-fid="' + friend_id + '">' + friendName + '</li>';
 			$('#friends').append(friendsHtml);
+			if(friends.sCode = 3){
+				$('#friends #safetyButton:last').addClass('hide');
+				$('#friends #awaitingResponse:last').removeClass('hide');
+			}
 		});
+	},
+
+	sendMessage: function(){
+		var $this = $(this);
+		var rId = $this.closest('.friend-list-item').find('.cool').attr('data-rid');
+		if($this.attr('id') == 'safetyButton'){
+			$.ajax({
+				url: 'assets/php/createSMS.php',
+				type: 'get',
+				data: {
+					userId: CheckLoggedIn.user.uId,
+					rId: rId
+				},
+				dataType: 'jsonp',
+				success: function( result ) {
+					console.log(result);
+					if(!result.success){
+						console.log(result);
+					}else{
+						$this.addClass('hide');
+						$this.closest('.friend-list-item').find('#awaitingResponse').removeClass('hide');
+					}
+
+				}
+			});
+		}
+
 	}
 };
 

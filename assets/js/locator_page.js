@@ -1,5 +1,10 @@
 var Locator_page = {
+
+	rid: '',
+
 	init: function() {
+		Locator_page.rid = Locator_page.getUrlParameter('rid');
+		Locator_page.load_details(Locator_page.rid);
 		Locator_page.events();
 	},
 
@@ -8,7 +13,7 @@ var Locator_page = {
 			var lat = $('.lat').val();
 			var lon = $('.lon').val();
 			if (lon != '' && lat != '') {
-				Locator_page.send_status(Locator_page.getUrlParameter('rid'), lat, lon, 1);
+				Locator_page.send_status(Locator_page.rid, lat, lon, 1);
 			} else {
 				alert('wait for data pls');
 			}
@@ -20,13 +25,29 @@ var Locator_page = {
 			var lat = $('.lat').val();
 			var lon = $('.lon').val();
 			if (lon != '' && lat != '') {
-				Locator_page.send_status(Locator_page.getUrlParameter('rid'), lat, lon, 2);
+				Locator_page.send_status(Locator_page.rid, lat, lon, 2);
 			} else {
 				alert('wait for data pls');
 			}
 			$(".you-ok").hide();
 			$(".help-me").show();
 		})
+	},
+
+	load_details: function(rid) {
+		$.ajax({
+            url: '../assets/php/user_details.php',
+            type: 'GET',
+            data: {
+                rid: rid
+            },
+            dataType: 'jsonp',
+            success: function( result ) {
+                if (result.success) {
+                	$('.main-header').text(result.success.givenName + " " + result.success.surname + ' wants to know if you are safe');
+                }
+            }
+        });
 	},
 
 	send_status: function(rid, lat, lon, status) {
@@ -41,7 +62,12 @@ var Locator_page = {
             },
             dataType: 'jsonp',
             success: function( result ) {
-                console.log(result);
+                if(result.status == "success") {
+                	if (status == 1) {
+                		console.log("Thanks, we will let aaa")
+                	}
+
+                }
             }
         });
 	},
