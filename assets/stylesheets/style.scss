@@ -6,6 +6,7 @@ $light-black: #333333;  /* charcoal black */
 $main-grey: #484848;  /* dark grey */
 $light-grey: #cccccc;  /* light grey */
 $sec-grey: #2a2a2a;
+$hot-red: #ff133f;
 $font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 
 html, body {
@@ -184,7 +185,7 @@ html, body {
       margin-top: .5em;
       color: $main-color;
       font-weight: 300;
-      border-radius: 5px;
+      border-radius: 8px;
       margin-left: auto;
       margin-right: auto;
 
@@ -198,6 +199,54 @@ html, body {
     .right-status {
         text-align: center;
     }
+}
+
+.friends-header {
+  margin-bottom: 50px;
+}
+#friends {
+  .friend-list-item {
+    .friend-name {
+        position: relative;
+        bottom: 6px;
+        color: #FFF;
+    }
+    .btn-xs {
+      margin-right: 5px;
+      transition: all 0.2s ease-in;
+    }
+    #safetyButton {
+      
+      background-color: $light-black;
+      color: $main-color;
+      
+      &:hover {
+        background-color: $main-color;
+        color: $light-black;
+      }
+    }
+    #awaitingResponse {
+      background-color: transparent;
+      color: $light-grey;
+    }
+    #okStatus {
+      background-color: $main-color;
+      color: $light-black;
+    }
+    #helpStatus {
+      background-color: $hot-red;
+      color: #FFF;
+    }
+    #deleteButton {
+      background-color: transparent;
+      color: $light-black;
+      transition: all 0.2s ease-in;
+      &:hover {
+        color: darken($hot-red, 10%);;
+      }
+    }
+  } 
+
 }
 
 
