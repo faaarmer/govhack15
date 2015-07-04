@@ -8,7 +8,7 @@ var Locator_page = {
 			var lat = $('.lat').val();
 			var lon = $('.lon').val();
 			if (lon != '' && lat != '') {
-				Locator_page.send_status(Locator_page.getUrlParameter('uid'), lat, lon, 1);
+				Locator_page.send_status(Locator_page.getUrlParameter('rid'), lat, lon, 1);
 			} else {
 				alert('wait for data pls');
 			}
@@ -18,19 +18,19 @@ var Locator_page = {
 			var lat = $('.lat').val();
 			var lon = $('.lon').val();
 			if (lon != '' && lat != '') {
-				Locator_page.send_status(Locator_page.getUrlParameter('uid'), lat, lon, 2);
+				Locator_page.send_status(Locator_page.getUrlParameter('rid'), lat, lon, 2);
 			} else {
 				alert('wait for data pls');
 			}
 		})
 	},
 
-	send_status: function(uId, lat, lon, status) {
+	send_status: function(rid, lat, lon, status) {
 		$.ajax({
             url: '../assets/php/status.php',
             type: 'GET',
             data: {
-                uId: uId,
+                rid: rid,
                 status: status,
                 lat: lat,
                 lon: lon

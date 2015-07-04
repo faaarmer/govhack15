@@ -10,7 +10,8 @@ var FriendsList = {
 		$('body').on('touch click', '.add-button', FriendsList.addFriends);
 
 		$('body').on('touch click', '.delete-button', function(e) {
-			console.log(this);
+			var rid = $(this).closest('.row').find('.friend').attr('data-rid');
+			FriendsList.deleteFriends(rid);
 		});
 
 		$('.form-control').keypress(function (e) {
@@ -49,7 +50,24 @@ var FriendsList = {
 		});
 	},
 
+	deleteFriends: function(rid){
 
+		$.ajax({
+			url: 'assets/php/deleteFriends.php',
+			type: 'get',
+			data: {
+
+				rid: rid
+
+			},
+			dataType: 'jsonp',
+			success: function( result ) {
+				if (result.success) {
+					$('.friend[data-rid='+rid+']').parent().remove();
+				}
+			}
+		});
+	},
 
 	getFriends: function(){
 		console.log(CheckLoggedIn.user.uId);
@@ -77,7 +95,7 @@ var FriendsList = {
 		$.each(friends, function(index, friend){
 			var friend_id = friend.rId;
 			var friendName = friend.fullName;
-			var friendsHtml = '<div class="row"><div class="col-xs-6" data-rid="' + friend_id + '"><h6>' + friendName + '</h6></div><div class="col-xs-6 right-status"><span id="safety-status"></span><p class="delete-button">X</p></div></div>';
+			var friendsHtml = '<div class="row"><div class="col-xs-6 friend" data-rid="' + friend_id + '"><h6>' + friendName + '</h6></div><div class="col-xs-6 right-status"><span id="safety-status"></span><p class="delete-button">X</p></div></div>';
 			//'<li class="friends-list" data-fid="' + friend_id + '">' + friendName + '</li>';
 			$('#friends').append(friendsHtml);
 		});
