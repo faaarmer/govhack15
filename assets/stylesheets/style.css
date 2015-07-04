@@ -154,14 +154,6 @@ html, body {
   .right-panel .right-status {
     text-align: center; }
 
-input.form-control {
-  margin: 10px 0px;
-  background-color: #484848;
-  color: #52ffaf;
-  border-color: #333333; }
-  input.form-control:focus {
-    border-color: #52ffaf; }
-
 .row.button {
   text-align: center; }
 
