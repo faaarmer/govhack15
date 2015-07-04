@@ -44,11 +44,15 @@ html, body {
         width: 100%; }
       .leftPanel .panel .tiles:hover {
         border-color: #52ffaf;
-        background-color: #52ffaf; }
+        background-color: #52ffaf;
+        transition: border-color .1s ease-in;
+        transition: background-color .1s ease-in; }
         .leftPanel .panel .tiles:hover span {
-          color: #484848; }
+          color: #484848;
+          transition: color .1s ease-in; }
         .leftPanel .panel .tiles:hover svg path {
-          fill: #484848; }
+          fill: #484848;
+          transition: fill .1s ease-in; }
     .leftPanel .panel svg {
       width: 2em;
       height: 2em;

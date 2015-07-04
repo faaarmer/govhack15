@@ -58,13 +58,17 @@ html, body {
           &:hover {
             border-color: $main-color;
             background-color: $main-color;
+            transition: border-color .1s ease-in;
+            transition: background-color .1s ease-in;
 
             span {
                 color: $main-grey;
+                transition: color .1s ease-in;
             }
 
             svg path {
                 fill: $main-grey;
+                transition: fill .1s ease-in;
             }
           }
         }
