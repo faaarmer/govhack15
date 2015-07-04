@@ -1,0 +1,28 @@
+body#locator-page {
+	background-color: $light-black;
+}
+
+.main-text {
+	color: #fcfcfc;
+}
+
+.ok_button, .help_button {
+	-webkit-border-radius: 3;
+  	-moz-border-radius: 3;
+  	border-radius: 3px;
+  	font-size: 20px;
+  	background: #41a4f4;
+  	padding: 15px 30px 15px 30px;
+  	text-decoration: none;
+  	border-color: transparent;
+    font-family: $font-family;
+}
+
+.ok_button {
+	background-color: $main-color;
+}
+
+.help_button {
+	background-color: #ff5722;
+  color: #fcfcfc;
+}
