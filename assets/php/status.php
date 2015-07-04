@@ -20,7 +20,7 @@ $sql = "INSERT INTO status (rid, sCode, lat, lon, sTimestamp) VALUES ($rid,$stat
 if (mysqli_query($mysqli, $sql)) {
 	   $response['status'] = "success";
 } else {
-		echo mysqli_error($mysqli);
+		error_log(mysqli_error($mysqli));
 	   $response['status'] = "failed";
 }
 
