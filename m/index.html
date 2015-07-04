@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=620" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  	<script type="text/javascript" src="../assets/js/locator_page.js"></script>
+    
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GovHack 2015 Brisbane - Project Naya" />
+    <meta name="keywords" content="govhack, open source, govhackbne" />
+    <!-- <link rel="shortcut icon" href="../favicon.ico"> -->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
+    <![endif]-->
+    <title>Locator</title>
+  </head>
+  
+    <body id="locator-page">
+      <p>Are you safe?</p>
+        <input type="hidden" class="lat" name="lat" id="lat"/>
+        <input type="hidden" class="lon" name="lon" id="lon"/>
+        <p><button class="ok_button">I'm OK</button></p>
+        <p><button class="help_button">Need help</button></p>
+    </body>
+
+    <script>
+	function success(position) {
+	  document.querySelector('#lat').value = position.coords.latitude
+	  document.querySelector('#lon').value = position.coords.longitude
+	}
+	function error(msg) {
+	}
+
+	if (navigator.geolocation) {
+	  navigator.geolocation.getCurrentPosition(success, error);
+	} else {
+	  error('not supported');
+	}
+
+	</script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+ </html>
