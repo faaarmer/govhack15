@@ -10,12 +10,23 @@ var Map_test = {
 
 	},
 
+	pos: function() {
+		return control.getPosition();
+	},
+
 	map_init: function(){
 		// initiate leaflet map
 		Map_test.map = new L.Map('cartodb-map', {
 			center: [-28.3080,139.1245],
-			zoom: 5
-		})
+			zoom: 5,
+			zoomControl: false
+		});
+
+		 var zoomControl = L.control.zoom({
+            position: 'topright'
+        });
+		 
+        Map_test.map.addControl(zoomControl);
 
 		var layerUrl = 'https://faaarmer.cartodb.com/api/v2/viz/31908478-2206-11e5-882a-0e8dde98a187/viz.json';
 
