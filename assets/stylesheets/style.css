@@ -34,6 +34,7 @@ html, body {
   float: left; }
   .leftPanel .panel {
     background-color: transparent;
+    border: 0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px; }
@@ -49,26 +50,26 @@ html, body {
       background-color: transparent;
       margin: 1em auto;
       cursor: pointer;
-      border: 1px solid #cccccc;
       border-radius: 5px; }
       .leftPanel .panel .tiles .tiles-wrap {
         height: 100%;
         width: 100%; }
       .leftPanel .panel .tiles:hover {
-        border-color: #52ffaf;
-        background-color: #52ffaf;
-        transition: border-color .15s ease-in;
-        transition: background-color .15s ease-in; }
-        .leftPanel .panel .tiles:hover span {
-          color: #484848;
-          transition: color .15s ease-in; }
+        transition: .15s ease-in; }
+        .leftPanel .panel .tiles:hover svg {
+          background-color: #52ffaf;
+          border-color: #52ffaf; }
         .leftPanel .panel .tiles:hover svg path {
-          fill: #484848;
-          transition: fill .15s ease-in; }
+          fill: #484848; }
+        .leftPanel .panel .tiles:hover span {
+          color: #52ffaf; }
     .leftPanel .panel svg {
-      width: 2em;
-      height: 2em;
-      margin-top: 1em; }
+      width: 3em;
+      height: 3em;
+      margin-top: 1em;
+      border: 1px solid whitesmoke;
+      border-radius: 5px;
+      padding: 0.5em; }
     .leftPanel .panel svg path {
       fill: #cccccc; }
     .leftPanel .panel span {

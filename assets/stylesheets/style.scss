@@ -44,6 +44,7 @@ html, body {
 
     .panel {
         background-color: transparent;
+        border: 0;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -62,7 +63,6 @@ html, body {
           background-color: transparent;
           margin: 1em auto;
           cursor: pointer;
-          border: 1px solid $light-grey;
           border-radius: 5px;
 
           .tiles-wrap {
@@ -71,27 +71,24 @@ html, body {
           }
 
           &:hover {
-            border-color: $main-color;
-            background-color: $main-color;
-            transition: border-color .15s ease-in;
-            transition: background-color .15s ease-in;
-
-            span {
-                color: $main-grey;
-                transition: color .15s ease-in;
+            svg {
+                background-color: $main-color;
+                border-color: $main-color;
             }
+            svg path { fill: $main-grey; }
+            span { color: $main-color; }
+            transition: .15s ease-in;
 
-            svg path {
-                fill: $main-grey;
-                transition: fill .15s ease-in;
-            }
           }
         }
 
         svg {
-            width: 2em;
-            height: 2em;
+            width: 3em;
+            height: 3em;
             margin-top: 1em;
+            border: 1px solid whitesmoke;
+            border-radius: 5px;
+            padding: 0.5em;
         }
 
         svg path {
