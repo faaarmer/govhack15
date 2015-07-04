@@ -31,7 +31,8 @@
 	function getFriends($userId){
 		global $mysqli;
 		$friends = array();
-		$sql = "SELECT r.rId, r.fullName, s.sCode FROM relation r INNER JOIN status s ON r.rId=s.rId WHERE r.uId = '$userId'";
+		$sql = "SELECT rId, fullName FROM relation WHERE uId = '$userId'";
+
 		if (!$result = $mysqli->query($sql)) {
 
 			printf("Errormessage 1 : %s\n", $mysqli->error);

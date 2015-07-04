@@ -132,14 +132,8 @@
 			echo $smsResult;
 
 			updateStatusTable($friend);
-
 		}
-
-		$response = array(
-			'success' => true,
-			'msg' => 'sent check'
-			);
-		send_response($response);
+		//formatSMS($destination, $text)
 
 
 
