@@ -1,30 +1,26 @@
 <?php 
 
-$hostname = "au-cdbr-azure-southeast-a.cloudapp.net";
-$username = "bfeace5cc210be";
-$password = "cfe2e899";
-$database = "govhack2015bne";
+include_once 'connection.php';
+
 
 $response = array();
-$mysqli = new mysqli($hostname, $username, $password, $database);
 /* check connection */
 if ($mysqli->connect_errno) {
 	    printf("Connect failed: %s\n", $mysqli->connect_error);
 		    exit();
 }
 
-$values = array( # no string here - if there is, remember to escape_string()
-	(int) $_GET['uId'],
-	(int) $_GET['status'],
-	(float) $_GET['lat'],
-	(float) $_GET['lon'],
-	date("'Y-m-d H:i:s'")
-);
-$values = implode(",", $values);
-$sql = "INSERT INTO status (uId, sCode, lat, lon, timestamp) VALUES ($values);";
+$rid = 	(int) $_GET['rid'];
+$status = (int) $_GET['status'];
+$lat = (float) $_GET['lat'];
+$lon = (float) $_GET['lon'];
+$date = date("'Y-m-d H:i:s'");
+
+$sql = "INSERT INTO status (rid, sCode, lat, lon, sTimestamp) VALUES ($rid,$status,$lat,$lon,$date) ON DUPLICATE KEY UPDATE sCode = $status, lat=$lat,lon=$lon,sTimestamp=$date;";
 if (mysqli_query($mysqli, $sql)) {
 	   $response['status'] = "success";
 } else {
+		error_log(mysqli_error($mysqli));
 	   $response['status'] = "failed";
 }
 

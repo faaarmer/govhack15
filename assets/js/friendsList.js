@@ -10,7 +10,8 @@ var FriendsList = {
 		$('body').on('touch click', '.add-button', FriendsList.addFriends);
 
 		$('body').on('touch click', '.delete-button', function(e) {
-			console.log(this);
+			var rid = $(this).closest('.row').find('.friend').attr('data-rid');
+			FriendsList.deleteFriends(rid);
 		});
 
 		$('.form-control').keypress(function (e) {
@@ -49,7 +50,24 @@ var FriendsList = {
 		});
 	},
 
+	deleteFriends: function(rid){
 
+		$.ajax({
+			url: 'assets/php/deleteFriends.php',
+			type: 'get',
+			data: {
+
+				rid: rid
+
+			},
+			dataType: 'jsonp',
+			success: function( result ) {
+				if (result.success) {
+					$('.friend[data-rid='+rid+']').parent().remove();
+				}
+			}
+		});
+	},
 
 	getFriends: function(){
 		console.log(CheckLoggedIn.user.uId);
