@@ -15,6 +15,18 @@ html, body {
 
 .row {
     margin: 0 !important;
+    padding-top: 5px;
+}
+
+.active {
+    svg {
+        background-color: $main-color;
+        border-color: $main-color !important;
+        path { fill: $main-grey !important; }
+    }
+
+    span { color: $main-color; }
+    transition: .15s ease-in;
 }
 
 #cartodb-map {
@@ -74,7 +86,7 @@ html, body {
               width: 100%;
           }
 
-          &:hover {
+          &:hover{
             svg {
                 background-color: $main-color;
                 border-color: $main-color;

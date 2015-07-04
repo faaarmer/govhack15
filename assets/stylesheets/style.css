@@ -9,7 +9,18 @@ html, body {
   font-family: "Open Sans", "Helvetica Neue", sans-serif; }
 
 .row {
-  margin: 0 !important; }
+  margin: 0 !important;
+  padding-top: 5px; }
+
+.active {
+  transition: .15s ease-in; }
+  .active svg {
+    background-color: #52ffaf;
+    border-color: #52ffaf !important; }
+    .active svg path {
+      fill: #484848 !important; }
+  .active span {
+    color: #52ffaf; }
 
 #cartodb-map {
   position: fixed;

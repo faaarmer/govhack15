@@ -107,6 +107,14 @@
                     <button class="check-button">fuck you</button>
                   </div>
                 </div>
+                <div class="row people">
+                  <div class="col-xs-6">
+                    <h6>John</h6>
+                  </div>
+                  <div class="col-xs-6 right-status">
+                    <span></span>
+                  </div>
+                </div>
               </div>
             </body>
             <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -123,5 +131,10 @@
             $('.fa-caret-right').click(function(){
             $('.right-panel').hide("slide"), $('.right-menu').show();
             });
+
+            $('.tiles').click(function(){
+            $(this).toggleClass('active');
+            });
+
             </script>
           </html>
