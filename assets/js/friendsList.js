@@ -1,8 +1,10 @@
 var FriendsList = {
 
 	init: function(){
+		console.log('TITTIESQ!!');
 		FriendsList.events();
 		FriendsList.getFriends();
+
 	},
 
 	events: function(){
@@ -43,13 +45,13 @@ var FriendsList = {
 				userId: CheckLoggedIn.user.uId
 			},
 			dataType: 'jsonp',
-			success: function( friends ) {
-				console.log(friends);
-				if(!friends.success){
+			success: function( results ) {
+				console.log(results + '!!!!!1');
+				if(!results.success){
 					console.log('failed');
 				}else{
 					console.log('worked');
-
+					FriendsList.insertUsers(results);
 				}
 
 			}
@@ -57,17 +59,14 @@ var FriendsList = {
 	},
 
 
-	insertUsers: function(friends){
-		var friends = friends.friends;
+	insertUsers: function(results){
+		var friends = results.friends;
 
 		$.each(friends, function(index, friend){
 			var friend_id = friend.rId;
-			console.log(friend_id);
 			var friendName = friend.fullName;
-			console.log(friendName)
-			var friendHtml = '<li data-friendid="' + friend_id '">' + friendName + '</li>'; console.log(friendHtml);
-
-			$('#friends').append(friendHtml);
+			var friendsHtml = '<li data-fid="' + friend_id + '">' + friendName + '</li>';
+			$('#friends').append(friendsHtml);
 		});
 	}
 };
