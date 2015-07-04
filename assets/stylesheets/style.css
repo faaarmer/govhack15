@@ -258,6 +258,59 @@ body#login-page {
       body#login-page .login-fields .loginBtn:hover {
         background-color: #52ffaf;
         color: #484848; }
+    body#login-page .login-fields .register-link {
+      margin-top: 80px;
+      text-align: center; }
+      body#login-page .login-fields .register-link a {
+        font-size: 16px;
+        color: #52ffaf; }
+        body#login-page .login-fields .register-link a:hover {
+          color: #52ffaf; }
+
+body#registration {
+  background: #333333; }
+  body#registration .container {
+    margin-top: 40px; }
+  body#registration .back-to-login .btn-link {
+    color: #cccccc;
+    transition: color 0.2s ease-in; }
+    body#registration .back-to-login .btn-link .fa-arrow-left {
+      margin-right: 5px; }
+    body#registration .back-to-login .btn-link:hover {
+      color: #52ffaf; }
+  body#registration .registration-header {
+    color: #52ffaf;
+    font-weight: 400; }
+  body#registration .registration-form .reg-title {
+    color: #cccccc;
+    margin-top: 30px;
+    margin-bottom: 30px; }
+  body#registration .registration-form input.form-control {
+    margin: 10px 0px;
+    background-color: #484848;
+    color: #52ffaf;
+    border-color: #333333; }
+    body#registration .registration-form input.form-control:focus {
+      border-color: #52ffaf; }
+  body#registration .registration-form label {
+    color: #cccccc;
+    font-weight: 400; }
+  body#registration .registration-form .registerBtn {
+    padding-left: 35px;
+    padding-right: 35px;
+    border-color: #52ffaf;
+    color: #52ffaf;
+    background-color: transparent;
+    transition: all 0.2s ease-in; }
+    body#registration .registration-form .registerBtn .fa-arrow-right {
+      margin-left: 10px; }
+    body#registration .registration-form .registerBtn:hover {
+      background-color: #52ffaf;
+      color: #333333; }
+      body#registration .registration-form .registerBtn:hover .fa-arrow-right {
+        color: #333333; }
+  body#registration .registration-form .reg-button-controls {
+    margin-top: 40px !important; }
 
 body#locator-page {
   background-color: #333333; }

@@ -1,0 +1,64 @@
+body#registration {
+	background: $light-black;
+	.container {
+		margin-top: 40px;
+	}
+	.back-to-login {
+		.btn-link {
+			color: $light-grey;
+			transition: color 0.2s ease-in;
+			.fa-arrow-left {
+				margin-right: 5px;
+			}
+			&:hover {
+				color: $main-color;
+			}
+		}
+		
+	}
+	.registration-header {
+		color: $main-color;
+		font-weight: 400;
+	}
+	.registration-form {
+		.reg-title {
+			color: $light-grey;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+		input.form-control {
+			margin: 10px 0px;
+			background-color: $main-grey;
+			color: $main-color;
+			border-color: $light-black;
+			&:focus {
+				border-color: $main-color;
+			}
+		}
+		label {
+			color: $light-grey;
+			font-weight: 400;
+		}
+		.registerBtn {
+			padding-left: 35px;
+			padding-right: 35px;
+			border-color: $main-color;
+			color: $main-color;
+			background-color: transparent;
+			.fa-arrow-right {
+				margin-left: 10px;
+			}
+			transition: all 0.2s ease-in;
+			&:hover {
+				background-color: $main-color;
+				color: $light-black;
+				.fa-arrow-right {
+					color: $light-black;
+				}
+			}
+		}
+		.reg-button-controls {
+			margin-top: 40px !important;
+		}
+	}
+}

@@ -51,6 +51,17 @@ body#login-page {
 				color: $main-grey;
 			}
 		}
+		.register-link {
+			margin-top: 80px;
+			text-align: center;
+			a {
+				font-size: 16px;
+				color: $main-color;
+				&:hover {
+					color: $main-color;
+				}
+			}
+		}
 	}
 	
 }
