@@ -11,22 +11,61 @@ html, body {
 .menu-button {
   border: 0;
   background-color: transparent;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  margin: .75em; }
 
 .leftPanel {
   width: 10em;
   height: 100%;
   display: none;
-  background: #0d0d0d;
+  background: #484848;
   float: left; }
   .leftPanel .panel {
-    background-color: transparent; }
-    .leftPanel .panel li {
-      list-style-type: none;
-      font-weight: 300;
-      color: white;
-      text-transform: uppercase;
-      font-size: 80%;
-      letter-spacing: 1px; }
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+    .leftPanel .panel h1 {
+      font-size: 1.5em;
+      font-family: "Open Sans", "Helvetica Neue", sans-serif;
+      font-weight: 400;
+      color: #52ffaf;
+      letter-spacing: 5px; }
+    .leftPanel .panel .tiles {
+      height: 5em;
+      width: 5em;
+      background-color: transparent;
+      margin: 1em auto;
+      cursor: pointer;
+      border: 1px solid #cccccc;
+      border-radius: 5px; }
+      .leftPanel .panel .tiles .tiles-wrap {
+        height: 100%;
+        width: 100%; }
+      .leftPanel .panel .tiles:hover {
+        border-color: #52ffaf;
+        background-color: #52ffaf; }
+        .leftPanel .panel .tiles:hover span {
+          color: #484848; }
+        .leftPanel .panel .tiles:hover svg path {
+          fill: #484848; }
+    .leftPanel .panel svg {
+      width: 2em;
+      height: 2em;
+      margin-top: 1em; }
+    .leftPanel .panel svg path {
+      fill: #cccccc; }
+    .leftPanel .panel span {
+      color: #cccccc;
+      font-size: 50%;
+      display: block;
+      padding-top: 0.25em; }
+  .leftPanel .profile-photo {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    bottom: 2em;
+    left: 2.5em; }
 
 /*# sourceMappingURL=style.css.map */
