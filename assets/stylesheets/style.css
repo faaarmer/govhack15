@@ -45,14 +45,14 @@ html, body {
       .leftPanel .panel .tiles:hover {
         border-color: #52ffaf;
         background-color: #52ffaf;
-        transition: border-color .1s ease-in;
-        transition: background-color .1s ease-in; }
+        transition: border-color .15s ease-in;
+        transition: background-color .15s ease-in; }
         .leftPanel .panel .tiles:hover span {
           color: #484848;
-          transition: color .1s ease-in; }
+          transition: color .15s ease-in; }
         .leftPanel .panel .tiles:hover svg path {
           fill: #484848;
-          transition: fill .1s ease-in; }
+          transition: fill .15s ease-in; }
     .leftPanel .panel svg {
       width: 2em;
       height: 2em;

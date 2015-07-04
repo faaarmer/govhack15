@@ -58,17 +58,17 @@ html, body {
           &:hover {
             border-color: $main-color;
             background-color: $main-color;
-            transition: border-color .1s ease-in;
-            transition: background-color .1s ease-in;
+            transition: border-color .15s ease-in;
+            transition: background-color .15s ease-in;
 
             span {
                 color: $main-grey;
-                transition: color .1s ease-in;
+                transition: color .15s ease-in;
             }
 
             svg path {
                 fill: $main-grey;
-                transition: fill .1s ease-in;
+                transition: fill .15s ease-in;
             }
           }
         }
