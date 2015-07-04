@@ -11,10 +11,11 @@ var FriendsList = {
 	},
 
 	addFriends: function(){
-
+		var fullName = $('#fullName').val();
+		var phone = $('#phone').val();
 
 		$.ajax({
-			url: '../assets/php/FriendsList.php',
+			url: '../assets/php/addFriends.php',
 			type: 'get',
 			data: {
 
@@ -27,8 +28,10 @@ var FriendsList = {
 			success: function( result ) {
 				if(!result.success){ console.log('NOT STORED BITCH');
 				}else{
-					// FriendsList.storeLogin(result);
-					console.log('STORED BITCH');
+					FriendsList.getFriends();
+					$('#friends').children().remove();
+					$('#fullName').val("");
+					$('#phone').val("");
 				}
 
 			}
