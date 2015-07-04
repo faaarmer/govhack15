@@ -14,7 +14,15 @@ var Map_test = {
 			Map_test.bushFiresLayer.toggle();
 		});
 
+		$('body').on('click','span.bushfires',function(e) {
+			Map_test.bushFiresLayer.toggle();
+		});
+
 		$('body').on('click','.emergency_toggle',function(e) {
+			Map_test.fireStationsLayer.toggle();
+		});
+
+		$('body').on('click','span.emergency',function(e) {
 			Map_test.fireStationsLayer.toggle();
 		});
 	},
@@ -53,6 +61,7 @@ var Map_test = {
 
 	    cartodb.createLayer(Map_test.map, bushFiresURL).addTo(Map_test.map).on('done', function(layer) {
 	    	Map_test.bushFiresLayer = layer;
+	    	Map_test.bushFiresLayer.hide();
 	    }).on('error', function(error) {
 	      console.log(error);
 	    });

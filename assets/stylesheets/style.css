@@ -8,6 +8,20 @@ html, body {
   height: 100%;
   font-family: "Open Sans", "Helvetica Neue", sans-serif; }
 
+.row {
+  margin: 0 !important;
+  padding-top: 5px; }
+
+.active {
+  transition: .15s ease-in; }
+  .active svg {
+    background-color: #52ffaf;
+    border-color: #52ffaf !important; }
+    .active svg path {
+      fill: #484848 !important; }
+  .active span {
+    color: #52ffaf; }
+
 #cartodb-map {
   position: fixed;
   width: 100%;
@@ -123,6 +137,7 @@ html, body {
   .right-panel .line-break {
     margin: 0;
     border-color: #52ffaf; }
+<<<<<<< HEAD
   .right-panel .people {
     background-color: rgba(82, 255, 174, 0.85); }
 
@@ -169,5 +184,23 @@ body#login-page {
       body#login-page .login-fields .loginBtn:hover {
         background-color: #52ffaf;
         color: #484848; }
+=======
+  .right-panel .check-button {
+    border: 1px solid #52ffaf;
+    background-color: transparent;
+    padding: .05em 1em;
+    margin-top: .5em;
+    color: #52ffaf;
+    font-weight: 300;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto; }
+    .right-panel .check-button:hover {
+      background-color: #52ffaf;
+      color: #484848;
+      transition: .15s ease-in; }
+  .right-panel .right-status {
+    text-align: center; }
+>>>>>>> origin/master
 
 /*# sourceMappingURL=style.css.map */
