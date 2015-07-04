@@ -3,6 +3,7 @@ var Map_test = {
 	map: null,
 	bushFiresLayer: '',
 	fireStationsLayer: '',
+	floodLayer: '',
 
 	init: function(){
 		Map_test.map_init();
@@ -25,6 +26,14 @@ var Map_test = {
 		$('body').on('click','span.emergency',function(e) {
 			Map_test.fireStationsLayer.toggle();
 		});
+
+		$('body').on('click','.flood_toggle',function(e) {
+			Map_test.floodLayer.toggle();
+		});
+
+		$('body').on('click','span.flooding',function(e) {
+			Map_test.floodLayer.toggle();
+		});
 	},
 
 	map_init: function(){
@@ -40,10 +49,9 @@ var Map_test = {
         });
 
         Map_test.map.addControl(zoomControl);
-
+        var floodURL = 'https://faaarmer.cartodb.com/api/v2/viz/cb1f427e-2241-11e5-a26b-0e9d821ea90d/viz.json';
 		var bushFiresURL = 'https://faaarmer.cartodb.com/api/v2/viz/31908478-2206-11e5-882a-0e8dde98a187/viz.json';
 		var fireStationsURL = 'https://faaarmer.cartodb.com/api/v2/viz/790bff40-2228-11e5-89f4-0e4fddd5de28/viz.json';
-
 
 		// Add a basemap to the map object just created
 
@@ -69,6 +77,13 @@ var Map_test = {
 	    cartodb.createLayer(Map_test.map, fireStationsURL).addTo(Map_test.map).on('done', function(layer) {
 	    	Map_test.fireStationsLayer = layer;
 	    	Map_test.fireStationsLayer.hide();
+	    }).on('error', function(error) {
+	      console.log(error);
+	    });
+
+	    cartodb.createLayer(Map_test.map, floodURL).addTo(Map_test.map).on('done', function(layer) {
+	    	Map_test.floodLayer = layer;
+	    	Map_test.floodLayer.hide();
 	    }).on('error', function(error) {
 	      console.log(error);
 	    });
