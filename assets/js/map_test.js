@@ -47,10 +47,11 @@ var Map_test = {
 		});
 
 		 var zoomControl = L.control.zoom({
-            position: 'topright'
+            position: 'bottomleft'
         });
 
         Map_test.map.addControl(zoomControl);
+       	// $('.leaflet-control-zoom').css('margin-left','110px');
         var floodURL = 'https://faaarmer.cartodb.com/api/v2/viz/cb1f427e-2241-11e5-a26b-0e9d821ea90d/viz.json';
 		var bushFiresURL = 'https://faaarmer.cartodb.com/api/v2/viz/31908478-2206-11e5-882a-0e8dde98a187/viz.json';
 		var fireStationsURL = 'https://faaarmer.cartodb.com/api/v2/viz/790bff40-2228-11e5-89f4-0e4fddd5de28/viz.json';

@@ -159,6 +159,15 @@
             <script type="text/javascript">
             $('.menu-button').click(function(){
             $('.leftPanel').toggle("slide");
+            if ($('.leaflet-control-zoom').css('marginLeft') == '10px') {
+            $(".leaflet-control-zoom").animate({
+			    marginLeft: "110px"
+			}, 400);
+            } else {
+            $(".leaflet-control-zoom").animate({
+			    marginLeft: "10px"
+			}, 400);
+            }
             });
             $('.right-menu').click(function(){
             $('.right-menu').hide(), $('.right-panel').toggle("slide");
