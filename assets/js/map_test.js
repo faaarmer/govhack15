@@ -13,10 +13,12 @@ var Map_test = {
 	events: function(){
 		$('body').on('click','.bushfires_toggle',function(e) {
 			Map_test.bushFiresLayer.toggle();
+			$('.cartodb-legend-stack').toggle();
 		});
 
 		$('body').on('click','span.bushfires',function(e) {
 			Map_test.bushFiresLayer.toggle();
+			$('.cartodb-legend-stack').toggle();
 		});
 
 		$('body').on('click','.emergency_toggle',function(e) {
@@ -70,6 +72,7 @@ var Map_test = {
 	    cartodb.createLayer(Map_test.map, bushFiresURL).addTo(Map_test.map).on('done', function(layer) {
 	    	Map_test.bushFiresLayer = layer;
 	    	Map_test.bushFiresLayer.hide();
+	    	$('.cartodb-legend-stack').hide();
 	    }).on('error', function(error) {
 	      console.log(error);
 	    });
