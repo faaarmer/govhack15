@@ -12,6 +12,8 @@ var Locator_page = {
 			} else {
 				alert('wait for data pls');
 			}
+			$(".you-ok").hide();
+			$(".im-ok").show();
 		})
 
 		$('body').on('click','.help_button',function(e){
@@ -22,6 +24,8 @@ var Locator_page = {
 			} else {
 				alert('wait for data pls');
 			}
+			$(".you-ok").hide();
+			$(".help-me").show();
 		})
 	},
 
