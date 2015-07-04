@@ -246,8 +246,13 @@ html, body {
       }
     }
   } 
-
 }
+.parsley-errors-list {
+    color: lighten($hot-red, 10%);
+    li {
+      list-style-type: none;
+    }
+  }
 
 @import 'forms';
 @import 'login';

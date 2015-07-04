@@ -186,6 +186,11 @@ html, body {
   #friends .friend-list-item #deleteButton:hover {
     color: #df002a; }
 
+.parsley-errors-list {
+  color: #ff4668; }
+  .parsley-errors-list li {
+    list-style-type: none; }
+
 input.form-control.add-person {
   width: 45%;
   margin: 10px 0px;
@@ -310,7 +315,8 @@ body#registration {
       body#registration .registration-form .registerBtn:hover .fa-arrow-right {
         color: #333333; }
   body#registration .registration-form .reg-button-controls {
-    margin-top: 40px !important; }
+    margin-top: 40px !important;
+    margin-bottom: 40px !important; }
 
 body#locator-page {
   background-color: #333333; }
