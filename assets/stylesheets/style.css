@@ -92,7 +92,7 @@ html, body {
   z-index: 10;
   color: #52ffaf;
   width: 2em;
-  background-color: rgba(72, 72, 72, 0.5);
+  background-color: rgba(71, 71, 71, 0.5);
   height: 100%;
   text-align: center;
   font-size: 1.5em;
@@ -124,6 +124,50 @@ html, body {
     margin: 0;
     border-color: #52ffaf; }
   .right-panel .people {
-    background-color: rgba(82, 255, 175, 0.85); }
+    background-color: rgba(82, 255, 174, 0.85); }
+
+body#login-page {
+  padding: 20px;
+  background-color: #2a2a2a; }
+  body#login-page .hero-logo {
+    margin-top: 100px; }
+    body#login-page .hero-logo .tag-line {
+      margin-top: 40px;
+      color: #52ffaf;
+      font-size: 14px;
+      font-weight: 100;
+      text-transform: uppercase;
+      letter-spacing: 10px;
+      text-align: center; }
+  body#login-page #naya-logo {
+    width: 300px; }
+  body#login-page .login-fields {
+    margin-top: 80px; }
+    body#login-page .login-fields .login-title {
+      color: #cccccc;
+      font-weight: 400;
+      margin-bottom: 20px; }
+    body#login-page .login-fields input.form-control {
+      margin: 10px 0px;
+      background-color: #484848;
+      color: #52ffaf;
+      border-color: #333333; }
+      body#login-page .login-fields input.form-control:focus {
+        border-color: #52ffaf; }
+    body#login-page .login-fields #forgotPass {
+      color: #999;
+      transition: all 0.2s ease-in; }
+      body#login-page .login-fields #forgotPass:hover {
+        color: #FFF; }
+    body#login-page .login-fields .loginBtn {
+      padding-left: 30px;
+      padding-right: 30px;
+      background-color: transparent;
+      border-color: #52ffaf;
+      color: #52ffaf;
+      transition: all 0.2s ease-in; }
+      body#login-page .login-fields .loginBtn:hover {
+        background-color: #52ffaf;
+        color: #484848; }
 
 /*# sourceMappingURL=style.css.map */

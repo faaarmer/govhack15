@@ -5,7 +5,7 @@ $main-black: #0d0d0d;  /* dark black */
 $light-black: #333333;  /* charcoal black */
 $main-grey: #484848;  /* dark grey */
 $light-grey: #cccccc;  /* light grey */
-
+$sec-grey: #2a2a2a;
 $font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 
 html, body {
@@ -166,4 +166,5 @@ html, body {
     }
 }
 
-
+// Login styles
+@import 'login';
