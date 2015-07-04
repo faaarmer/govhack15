@@ -10,6 +10,20 @@ var Map_test = {
 		Map_test.events();
 	},
 
+	test: function(lat, lng) {
+		Map_test.map.setView([lat,lng],10,{
+			pan: {
+				animate: true,
+				duration: 10
+			},
+			zoom: {
+				animate: true,
+				duration: 10
+			}
+		});
+		L.marker([lat, lng]).addTo(Map_test.map);
+	},
+
 	events: function(){
 		$('body').on('click','.bushfires_toggle',function(e) {
 			Map_test.bushFiresLayer.toggle();
@@ -43,7 +57,11 @@ var Map_test = {
 		Map_test.map = new L.Map('cartodb-map', {
 			center: [-28.3080,139.1245],
 			zoom: 5,
-			zoomControl: false
+			zoomControl: false,
+			fadeAnimation: true,
+			zoomAnimationThreshold: 6,
+			zoomAnimation: true,
+			markerZoomAnimation: false
 		});
 
 		 var zoomControl = L.control.zoom({
