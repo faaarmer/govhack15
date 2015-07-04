@@ -36,6 +36,7 @@ var FriendsList = {
 	},
 
 	getFriends: function(){
+		console.log(CheckLoggedIn.user.uId);
 		$.ajax({
 			url: '../assets/php/retrieveFriends.php',
 			type: 'get',
