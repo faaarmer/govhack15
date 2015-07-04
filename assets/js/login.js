@@ -6,13 +6,20 @@ var Login = {
 
 	events: function(){
 		$('body').on('touch click', '.loginBtn', Login.login);
+
+		$('.form-control').keypress(function (e) {
+		  if (e.which == 13) {
+		    Login.login();
+		    return false;
+		  }
+		});
 	},
 
 	login: function(){
 		var email = $('#email').val();
 		var password = $('#password').val();
 		$.ajax({
-			url: '../assets/php/login.php',
+			url: 'assets/php/login.php',
 			type: 'get',
 			data: {
 				email: email,
