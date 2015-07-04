@@ -14,7 +14,15 @@ var Map_test = {
 			Map_test.bushFiresLayer.toggle();
 		});
 
+		$('body').on('click','span.bushfires',function(e) {
+			Map_test.bushFiresLayer.toggle();
+		});
+
 		$('body').on('click','.emergency_toggle',function(e) {
+			Map_test.fireStationsLayer.toggle();
+		});
+
+		$('body').on('click','span.emergency',function(e) {
 			Map_test.fireStationsLayer.toggle();
 		});
 	},
