@@ -62,8 +62,10 @@ var FriendsList = {
 
 		$.each(friends, function(index, friend){
 			var friend_id = friend.rId;
+			console.log(friend_id);
 			var friendName = friend.fullName;
-			var friendHtml = '<li data-friendid=' + friend_id '>' + friendName + '</li>';
+			console.log(friendName)
+			var friendHtml = '<li data-friendid="' + friend_id '">' + friendName + '</li>'; console.log(friendHtml);
 
 			$('#friends').append(friendHtml);
 		});
