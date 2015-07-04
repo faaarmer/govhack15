@@ -110,7 +110,20 @@ html, body {
     text-align: left;
     color: #52ffaf;
     font-size: 1.5em;
-    margin: .75em;
+    margin-top: .75em;
+    margin-left: .75em;
     cursor: pointer; }
+  .right-panel h5, .right-panel h6 {
+    color: #52ffaf;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    text-transform: uppercase;
+    margin: 1em; }
+  .right-panel h6 {
+    color: #cccccc; }
+  .right-panel .line-break {
+    margin: 0;
+    border-color: #52ffaf; }
+  .right-panel .people {
+    background-color: rgba(82, 255, 175, 0.85); }
 
 /*# sourceMappingURL=style.css.map */
