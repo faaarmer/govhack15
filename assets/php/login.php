@@ -15,19 +15,13 @@
 	}else{
 		send_response('No email or password');
 	}
-
-	// if(!empty($_POST['security'])){
-	// 	$password = $_POST['security'];
-	// 	echo $_POST['security'];
-	// }
-
 	
 
 	function get_userlogin_by_email($email, $password) {
 
 		global $mysqli;
 
-		$sql = "SELECT uId, fName, lName, email, phone, user_img FROM users WHERE email = '$email' AND password = '$password'";
+		$sql = "SELECT uId, givenName, surname, email, phone, user_img FROM users WHERE email = '$email' AND password = '$password'";
 
 		if (!$result = $mysqli->query($sql)) {
 
