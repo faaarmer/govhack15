@@ -25,7 +25,7 @@ html, body {
         path { fill: $main-grey !important; }
     }
 
-    span { color: $main-color; }
+    span { color: $main-color !important; }
     transition: .15s ease-in;
 }
 
