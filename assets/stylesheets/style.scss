@@ -13,6 +13,10 @@ html, body {
     font-family: $font-family;
 }
 
+.row {
+    margin: 0 !important;
+}
+
 #cartodb-map {
     position: fixed;
     width: 100%;
@@ -161,8 +165,26 @@ html, body {
         border-color: $main-color;
     }
 
-    .people {
-        background-color: rgba(32.2%,100%,68.6%, 0.85);
+    .check-button {
+      border: 1px solid $main-color;
+      background-color: transparent;
+      padding: .05em 1em;
+      margin-top: .5em;
+      color: $main-color;
+      font-weight: 300;
+      border-radius: 5px;
+      margin-left: auto;
+      margin-right: auto;
+
+      &:hover {
+        background-color: $main-color;
+        color: $main-grey;
+        transition: .15s ease-in;
+      }
+    }
+
+    .right-status {
+        text-align: center;
     }
 }
 
