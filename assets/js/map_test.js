@@ -13,8 +13,8 @@ var Map_test = {
 	map_init: function(){
 		// initiate leaflet map
 		Map_test.map = new L.Map('cartodb-map', {
-			center: [35.3080,149.1245],
-			zoom: 6
+			center: [-28.3080,139.1245],
+			zoom: 5
 		})
 
 		var layerUrl = 'https://faaarmer.cartodb.com/api/v2/viz/31908478-2206-11e5-882a-0e8dde98a187/viz.json';
