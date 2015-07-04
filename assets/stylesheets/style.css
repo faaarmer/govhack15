@@ -85,4 +85,32 @@ html, body {
     bottom: 2em;
     left: 2.5em; }
 
+.right-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  color: #52ffaf;
+  width: 2em;
+  background-color: rgba(72, 72, 72, 0.5);
+  height: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  cursor: pointer; }
+
+.right-panel {
+  display: none;
+  width: 25em;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(72, 72, 72, 0.85);
+  top: 0;
+  right: 0; }
+  .right-panel .fa-caret-right {
+    text-align: left;
+    color: #52ffaf;
+    font-size: 1.5em;
+    margin: .75em;
+    cursor: pointer; }
+
 /*# sourceMappingURL=style.css.map */
