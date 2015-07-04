@@ -25,9 +25,10 @@ var FriendsList = {
 			},
 			dataType: 'jsonp',
 			success: function( result ) {
-				if(!result.success){ console.log('NOT STORED BITCH')
+				if(!result.success){ console.log('NOT STORED BITCH');
 				}else{
-					FriendsList.storeLogin(result);
+					// FriendsList.storeLogin(result);
+					console.log('STORED BITCH');
 				}
 
 			}
