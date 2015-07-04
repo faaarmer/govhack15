@@ -43,15 +43,29 @@ var FriendsList = {
 				userId: CheckLoggedIn.user.uId
 			},
 			dataType: 'jsonp',
-			success: function( result ) {
-				console.log(result);
-				if(!result.success){
+			success: function( friends ) {
+				console.log(friends);
+				if(!friends.success){
 					console.log('failed');
 				}else{
 					console.log('worked');
+
 				}
 
 			}
+		});
+	},
+
+
+	insertUsers: function(friends){
+		var friends = friends.friends;
+
+		$.each(friends, function(index, friend){
+			var friend_id = friend.rId;
+			var friendName = friend.fullName;
+			var friendHtml = '<li data-friendid="' + friend_id '">' + friendName + '</li>'
+
+			$('#friends').append(friendHtml);
 		});
 	}
 };
