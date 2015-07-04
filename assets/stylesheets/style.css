@@ -1,51 +1,32 @@
-/*
-Error: Invalid CSS after "        wjdt": expected "{", was "}"
-        on line 45 of style.scss
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+/* electric green */
+/* dark black */
+/* charcoal black */
+/* dark grey */
+/* light grey */
+html, body {
+  height: 100%;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif; }
 
-40:         }
-41:     }
-42: 
-43:     .profile-photo {
-44:         wjdt
-45:     }
-46: }
+.menu-button {
+  border: 0;
+  background-color: transparent;
+  font-size: 1.5em; }
 
-Backtrace:
-style.scss:45
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1162:in `expected'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1098:in `expected'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1093:in `tok!'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:638:in `block'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:658:in `block_child'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:647:in `block_contents'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:639:in `block'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:658:in `block_child'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:650:in `block_contents'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:639:in `block'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:632:in `ruleset'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:657:in `block_child'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:650:in `block_contents'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:117:in `stylesheet'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:42:in `parse'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/engine.rb:403:in `_to_tree'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/sass-3.4.15/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/listen-2.10.0/lib/listen/listener.rb:291:in `call'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/listen-2.10.0/lib/listen/listener.rb:291:in `_process_changes'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/listen-2.10.0/lib/listen/listener.rb:255:in `block in _wait_for_changes'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/listen-2.10.0/lib/listen/listener.rb:238:in `loop'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/listen-2.10.0/lib/listen/listener.rb:238:in `_wait_for_changes'
-/Users/imfelix/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/listen-2.10.0/lib/listen/listener.rb:327:in `block in _start_wait_thread'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"        wjdt\": expected \"{\", was \"}\"\A         on line 45 of style.scss\A \A 40:         }\A 41:     }\A 42: \A 43:     .profile-photo {\A 44:         wjdt\A 45:     }\A 46: }"; }
+.leftPanel {
+  width: 10em;
+  height: 100%;
+  display: none;
+  background: #0d0d0d;
+  float: left; }
+  .leftPanel .panel {
+    background-color: transparent; }
+    .leftPanel .panel li {
+      list-style-type: none;
+      font-weight: 300;
+      color: white;
+      text-transform: uppercase;
+      font-size: 80%;
+      letter-spacing: 1px; }
+
+/*# sourceMappingURL=style.css.map */
