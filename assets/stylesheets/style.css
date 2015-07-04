@@ -154,6 +154,30 @@ html, body {
   .right-panel .right-status {
     text-align: center; }
 
+input.form-control {
+  margin: 10px 0px;
+  background-color: #484848;
+  color: #52ffaf;
+  border-color: #333333; }
+  input.form-control:focus {
+    border-color: #52ffaf; }
+
+.row.button {
+  text-align: center; }
+
+button.add-button {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  width: 90%;
+  background-color: transparent;
+  border: 1px solid #52ffaf;
+  border-radius: 5px;
+  color: #52ffaf;
+  transition: all 0.2s ease-in; }
+  button.add-button:hover {
+    background-color: #52ffaf;
+    color: #484848; }
+
 body#login-page {
   padding: 20px;
   background-color: #2a2a2a; }
