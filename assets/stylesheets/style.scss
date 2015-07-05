@@ -20,14 +20,7 @@ html, body {
 }
 
 .active {
-    svg {
-        background-color: $main-color;
-        border-color: $main-color !important;
-        path { fill: $main-grey !important; }
-    }
-
-    span { color: $main-color !important; }
-    transition: .15s ease-in;
+    
 }
 
 #cartodb-map {
@@ -97,6 +90,25 @@ html, body {
             transition: .15s ease-in;
 
           }
+          &.active {
+            transition: all .15s ease-in;
+            svg {
+                background-color: $main-color;
+                border-color: $main-color !important;
+                path { 
+                  fill: $main-grey !important; 
+                }
+            }
+            span { 
+              color: $main-color !important; 
+            }
+            
+            .ses_toggle {
+              background-color: $main-color;
+              color: $light-black;
+              border-color: transparent;
+            }
+          }
         }
 
         svg {
@@ -117,6 +129,21 @@ html, body {
             font-size: 50%;
             display: block;
             padding-top: 0.25em;
+        }
+        .ses_toggle {
+          height: 42px;
+          width: 42px;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          border: 1px solid $light-grey;
+          color: $light-grey;
+          margin-bottom: 5px;
+          &:hover {
+            background-color: $main-color;
+            color: $light-black;
+            border-color: transparent;
+          }
         }
     }
 

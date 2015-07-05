@@ -12,16 +12,6 @@ html, body {
   margin: 0 !important;
   padding-top: 5px; }
 
-.active {
-  transition: .15s ease-in; }
-  .active svg {
-    background-color: #52ffaf;
-    border-color: #52ffaf !important; }
-    .active svg path {
-      fill: #484848 !important; }
-  .active span {
-    color: #52ffaf !important; }
-
 #cartodb-map {
   position: fixed;
   width: 100%;
@@ -77,6 +67,19 @@ html, body {
           fill: #484848; }
         .leftPanel .panel .tiles:hover span {
           color: #52ffaf; }
+      .leftPanel .panel .tiles.active {
+        transition: all .15s ease-in; }
+        .leftPanel .panel .tiles.active svg {
+          background-color: #52ffaf;
+          border-color: #52ffaf !important; }
+          .leftPanel .panel .tiles.active svg path {
+            fill: #484848 !important; }
+        .leftPanel .panel .tiles.active span {
+          color: #52ffaf !important; }
+        .leftPanel .panel .tiles.active .ses_toggle {
+          background-color: #52ffaf;
+          color: #333333;
+          border-color: transparent; }
     .leftPanel .panel svg {
       width: 3em;
       height: 3em;
@@ -91,6 +94,19 @@ html, body {
       font-size: 50%;
       display: block;
       padding-top: 0.25em; }
+    .leftPanel .panel .ses_toggle {
+      height: 42px;
+      width: 42px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      border: 1px solid #cccccc;
+      color: #cccccc;
+      margin-bottom: 5px; }
+      .leftPanel .panel .ses_toggle:hover {
+        background-color: #52ffaf;
+        color: #333333;
+        border-color: transparent; }
   .leftPanel .profile-photo {
     width: 50px;
     height: 50px;
