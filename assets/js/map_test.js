@@ -22,7 +22,8 @@ var Map_test = {
 				if(friend.sCode == "1") {
 					var okIcon = L.divIcon( { className: 'fa fa-map-marker fa-3x ok-icon' } );
 					L.marker([friend.lat, friend.lon],{
-						title:friend.fullName, icon:okIcon
+						title:friend.fullName + " " + friend.lat + " " + friend.lon,
+						icon:okIcon
 					}).addTo(Map_test.map);
 				} else {
 					var helpIcon = L.divIcon( { className: 'fa fa-map-marker fa-3x help-icon' } );

@@ -12,11 +12,7 @@ var Locator_page = {
 		$('body').on('click','.ok_button',function(e){
 			var lat = $('.lat').val();
 			var lon = $('.lon').val();
-			if (lon != '' && lat != '') {
-				Locator_page.send_status(Locator_page.rid, lat, lon, 1);
-			} else {
-				alert('wait for data pls');
-			}
+			Locator_page.send_status(Locator_page.rid, lat, lon, 1);
 			$(".you-ok").hide();
 			$(".im-ok").show();
 		})
@@ -24,11 +20,7 @@ var Locator_page = {
 		$('body').on('click','.help_button',function(e){
 			var lat = $('.lat').val();
 			var lon = $('.lon').val();
-			if (lon != '' && lat != '') {
-				Locator_page.send_status(Locator_page.rid, lat, lon, 2);
-			} else {
-				alert('wait for data pls');
-			}
+			Locator_page.send_status(Locator_page.rid, lat, lon, 2);
 			$(".you-ok").hide();
 			$(".help-me").show();
 		})
