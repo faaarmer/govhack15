@@ -18,7 +18,11 @@ var Map_test = {
 
 	add_markers_to_map: function(friends) {
 		$.each(friends, function(i, friend) {
-			console.log(friend);
+			if(friend.status == 1) {
+				L.marker([friend.lat, friend.lon],{title:friend.fullName}).addTo(Map_test.map);
+			} else {
+				L.marker([friend.lat, friend.lon],{title:friend.fullName}).addTo(Map_test.map);
+			}
 		});
 	},
 
