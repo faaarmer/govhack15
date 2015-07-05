@@ -10,7 +10,7 @@ var Map_test = {
 
 	init: function(){
 		Map_test.pusher = new Pusher(Map_test.app_id);
-		Map_test.notificationsChannel = Map_test.pusher.subscribe('my_channel');
+		Map_test.notificationsChannel = Map_test.pusher.subscribe(CheckLoggedIn.user.uId);
 		Map_test.map_init();
 		Map_test.events();
 	},
