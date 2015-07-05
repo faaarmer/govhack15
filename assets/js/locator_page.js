@@ -68,9 +68,9 @@ var Locator_page = {
             dataType: 'jsonp',
             success: function( result ) {
                 if (result.success) {
-                	$('.you-ok').text(result.success.givenName + " " + result.success.surname + ' wants to know if you are safe.');
+                	$('.you-ok').find('.main-header').text(result.success.givenName + " " + result.success.surname + ' wants to know if you are safe.');
                 	$('.im-ok').find('.sec-header').text(result.success.givenName + " " + result.success.surname + ' has been notifed of your safety.');
-                	$('.help-me').find('.sec-header').text("Don't worry, " + result.success.givenName + " " + result.success.surname + ' has been notified of your location');
+                	$('.help-me').find('.main-header').text("Don't worry, " + result.success.givenName + " " + result.success.surname + ' has been notified of your location');
                 }
             }
         });
