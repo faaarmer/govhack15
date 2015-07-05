@@ -13,7 +13,6 @@ var Locator_page = {
 			var lat = $('.lat').val();
 			var lon = $('.lon').val();
 			if (lon != '' && lat != '') {
-				Locator_page.send_status(Locator_page.getUrlParameter('rid'), lat, lon, 1);
 				Locator_page.send_status(Locator_page.rid, lat, lon, 1);
 			} else {
 				alert('wait for data pls');
@@ -26,7 +25,6 @@ var Locator_page = {
 			var lat = $('.lat').val();
 			var lon = $('.lon').val();
 			if (lon != '' && lat != '') {
-				Locator_page.send_status(Locator_page.getUrlParameter('rid'), lat, lon, 2);
 				Locator_page.send_status(Locator_page.rid, lat, lon, 2);
 			} else {
 				alert('wait for data pls');
