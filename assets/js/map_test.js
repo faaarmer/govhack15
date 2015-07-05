@@ -4,8 +4,10 @@ var Map_test = {
 	bushFiresLayer: '',
 	fireStationsLayer: '',
 	floodLayer: '',
+	pusher: '',
 
 	init: function(){
+		var pusher = new Pusher('128293');
 		Map_test.map_init();
 		Map_test.events();
 	},
@@ -25,6 +27,9 @@ var Map_test = {
 	},
 
 	events: function(){
+		myChannel.bind('my_event', function(data){
+		    console.log(data);
+		});
 		$('body').on('click','.bushfires_toggle',function(e) {
 			Map_test.bushFiresLayer.toggle();
 			$('.cartodb-legend-stack').toggle();
