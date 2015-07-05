@@ -5,7 +5,6 @@ var Logout = {
 	},
 
 	events: function(){
-		console.log('events!!!!!!!!!');
 		$('body').on('touch click', '#logoutBtn', Logout.logout);
 
 	},
