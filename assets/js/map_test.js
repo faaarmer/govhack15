@@ -6,9 +6,10 @@ var Map_test = {
 	floodLayer: '',
 	pusher: '',
 	notificationsChannel: '',
+	app_id: '128293',
 
 	init: function(){
-		Map_test.pusher = new Pusher('128293');
+		Map_test.pusher = new Pusher(Map_test.app_id);
 		Map_test.notificationsChannel = Map_test.pusher.subscribe('my_channel');
 		Map_test.map_init();
 		Map_test.events();
