@@ -22,15 +22,16 @@ $sql = "INSERT INTO status (rid, sCode, lat, lon, sTimestamp) VALUES ($rid,$stat
 if (mysqli_query($mysqli, $sql)) {
 	   $response['status'] = "success";
 	   $data = array();
-	   $result = $mysqli->query("SELECT uId FROM relation WHERE relation.rid = '$rid'");
+	   $result = $mysqli->query("SELECT uId, fullName FROM relation WHERE relation.rid = '$rid'");
 	   $row = $result->fetch_assoc();
 	   $data['rid'] = $rid;
 	   $data['status'] = $status;
 	   $data['lat'] = $lat;
 	   $data['lon'] = $lon;
+	   $data['relationName'] = $row['fullName'];;
 	   $data['date'] = $date;
 	   $response['user_id']=$row['uId'];
-	   $pusher->trigger($row['uId'], 'my_event', $data);
+	   $pusher->trigger($row['uId'], 'statusUpdated', $data);
 } else {
 		error_log(mysqli_error($mysqli));
 	   $response['status'] = "failed";

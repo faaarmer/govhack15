@@ -31,7 +31,7 @@ var Map_test = {
 	},
 
 	events: function(){
-		Map_test.notificationsChannel.bind('my_event', function(data){
+		Map_test.notificationsChannel.bind('status_change', function(data){
 		    console.log(data);
 		});
 		$('body').on('click','.bushfires_toggle',function(e) {
