@@ -44,13 +44,6 @@ var Locator_page = {
             },
             dataType: 'jsonp',
             success: function( result ) {
-               console.log(result);
-               if(result.status == "success") {
-               if (status == 1) {
-                		console.log("Thanks, we will let aaa");
-                	}
-
-                }
 
             }
         });
