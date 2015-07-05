@@ -44,7 +44,6 @@ var FriendsList = {
 				if(!result.success){ console.log('NOT STORED BITCH');
 				}else{
 					FriendsList.getFriends();
-					$('#friends').children().remove();
 					$('#fullName').val("");
 					$('#phone').val("");
 				}
@@ -102,6 +101,7 @@ var FriendsList = {
 			var friend_id = friend.rId;
 			var friendName = friend.fullName;
 			var friendsHtml = '<div class="row friend-list-item"><div class="cool col-xs-6" data-status="' + dataStat +'" data-rid="' + friend_id + '"><h6 class="friend-name">' + friendName + '</h6></div><div class="col-xs-6 right-status"><span class="safety-status"><button id="safetyButton" class="btn btn-xs">Check safety</button><button id="awaitingResponse" class="btn btn-xs hide">Waiting...</button><button id="okStatus" class="btn btn-xs hide"><span class="glyphicon glyphicon-ok"></span> I\'m Safe</button><button id="helpStatus" class="btn btn-xs hide"> I need help!</button></span><button id="deleteButton" class="btn btn-xs"><span class="glyphicon glyphicon-remove"></span></button></div></div>';
+			$('#friends').children().remove();
 			$('#friends').append(friendsHtml);
 
 		});
