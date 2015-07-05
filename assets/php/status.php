@@ -31,7 +31,7 @@ if (mysqli_query($mysqli, $sql)) {
 	   $data['relationName'] = $row['fullName'];;
 	   $data['date'] = $date;
 	   $response['user_id']=$row['uId'];
-	   $pusher->trigger($row['uId'], 'statusUpdated', $data);
+	   $pusher->trigger($row['uId'], 'status_change', $data);
 } else {
 		error_log(mysqli_error($mysqli));
 	   $response['status'] = "failed";
