@@ -5,9 +5,11 @@ var Map_test = {
 	fireStationsLayer: '',
 	floodLayer: '',
 	pusher: '',
+	notificationsChannel: '',
 
 	init: function(){
-		var pusher = new Pusher('128293');
+		Map_test.pusher = new Pusher('128293');
+		Map_test.notificationsChannel = Map_test.pusher.subscribe('my_channel');
 		Map_test.map_init();
 		Map_test.events();
 	},
@@ -27,7 +29,7 @@ var Map_test = {
 	},
 
 	events: function(){
-		myChannel.bind('my_event', function(data){
+		Map_test.notificationsChannel.bind('my_event', function(data){
 		    console.log(data);
 		});
 		$('body').on('click','.bushfires_toggle',function(e) {
