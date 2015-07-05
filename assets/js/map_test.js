@@ -4,14 +4,41 @@ var Map_test = {
 	bushFiresLayer: '',
 	fireStationsLayer: '',
 	floodLayer: '',
+	pusher: '',
+	notificationsChannel: '',
+	app_id: '9b198123b867650ff8cb',
 
 	init: function(){
+		Map_test.pusher = new Pusher(Map_test.app_id);
+		CheckLoggedIn.getUser();
+		Map_test.notificationsChannel = Map_test.pusher.subscribe(CheckLoggedIn.user.uId);
 		Map_test.map_init();
 		Map_test.events();
 	},
 
-	test: function(lat, lng) {
-		Map_test.map.setView([lat,lng],10,{
+	add_markers_to_map: function(friends) {
+		$.each(friends, function(i, friend) {
+			if (friend.lat != null && friend.lon != null) {
+				if(friend.sCode == "1") {
+					var okIcon = L.divIcon( { className: 'fa fa-map-marker fa-3x ok-icon' } );
+					L.marker([friend.lat, friend.lon],{
+						title:friend.fullName + " " + friend.lat + " " + friend.lon,
+						icon:okIcon
+					}).addTo(Map_test.map);
+				} else {
+					var helpIcon = L.divIcon( { className: 'fa fa-map-marker fa-3x help-icon' } );
+					L.marker([friend.lat, friend.lon],
+						{
+							title:friend.fullName,
+						    icon:helpIcon
+						}).addTo(Map_test.map);
+				}
+			}
+		});
+	},
+
+	goTo: function(lat, lng) {
+		Map_test.map.setView([lat,lng],15,{
 			pan: {
 				animate: true,
 				duration: 10
@@ -21,10 +48,12 @@ var Map_test = {
 				duration: 10
 			}
 		});
-		L.marker([lat, lng]).addTo(Map_test.map);
 	},
 
 	events: function(){
+		Map_test.notificationsChannel.bind('status_change', function(data){
+		    FriendsList.refreshFriends();
+		});
 		$('body').on('click','.bushfires_toggle',function(e) {
 			Map_test.bushFiresLayer.toggle();
 			$('.cartodb-legend-stack').toggle();
@@ -59,7 +88,7 @@ var Map_test = {
 			zoom: 5,
 			zoomControl: false,
 			fadeAnimation: true,
-			zoomAnimationThreshold: 6,
+			zoomAnimationThreshold: 10,
 			zoomAnimation: true,
 			markerZoomAnimation: false
 		});

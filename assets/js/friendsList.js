@@ -53,6 +53,11 @@ var FriendsList = {
 		});
 	},
 
+	refreshFriends: function() {
+		FriendsList.getFriends();
+		$('#friends').children().remove();
+	},
+
 	deleteFriends: function(rid){
 
 		$.ajax({
@@ -86,6 +91,7 @@ var FriendsList = {
 				if(!results.success){
 				}else{
 					FriendsList.insertUsers(results);
+					Map_test.add_markers_to_map(results.friends);
 					// if(results.friends.sCode)
 				}
 
@@ -98,21 +104,47 @@ var FriendsList = {
 		var friends = results.friends;
 
 		$.each(friends, function(index, friend){
+			var dataStat = friend.sCode;
 			var friend_id = friend.rId;
 			var friendName = friend.fullName;
-			var friendsHtml = '<div class="row friend-list-item"><div class="cool col-xs-6" data-rid="' + friend_id + '"><h6 class="friend-name">' + friendName + '</h6></div><div class="col-xs-6 right-status"><span class="safety-status"><button id="safetyButton" class="btn btn-xs">Check safety</button><button id="awaitingResponse" class="btn btn-xs hide">Waiting...</button><button id="okStatus" class="btn btn-xs hide"><span class="glyphicon glyphicon-ok"></span> I\'m Safe</button><button id="helpStatus" class="btn btn-xs hide"> I need help!</button></span><button id="deleteButton" class="btn btn-xs"><span class="glyphicon glyphicon-remove"></span></button></div></div>';
-			//'<li class="friends-list" data-fid="' + friend_id + '">' + friendName + '</li>';
+			var lat = friend.lat;
+			var lon = friend.lon;
+			var friendsHtml = '<div class="row friend-list-item"><div class="cool col-xs-6" data-status="' + dataStat +'" data-rid="' + friend_id + '" data-lat="' + lat + '" data-lon="' + lon + '"><h6 class="friend-name">' + friendName + '</h6></div><div class="col-xs-6 right-status"><span class="safety-status"><button id="safetyButton" class="btn btn-xs">Check safety</button><button id="awaitingResponse" class="btn btn-xs hide">Waiting...</button><button id="okStatus" class="btn btn-xs hide"><span class="glyphicon glyphicon-ok"></span> I\'m Safe</button><button id="helpStatus" class="btn btn-xs hide"> I need help!</button></span><button id="deleteButton" class="btn btn-xs"><span class="glyphicon glyphicon-remove"></span></button></div></div>';
 			$('#friends').append(friendsHtml);
-			if(friends.sCode = 3){
-				$('#friends #safetyButton:last').addClass('hide');
-				$('#friends #awaitingResponse:last').removeClass('hide');
-			}
+
 		});
+
+		$('[data-status="1"').closest('.friend-list-item').find('#safetyButton').addClass('hide');
+		$('[data-status="1"').closest('.friend-list-item').find('#okStatus').removeClass('hide');
+
+		$('[data-status="2"').closest('.friend-list-item').find('#safetyButton').addClass('hide');
+		$('[data-status="2"').closest('.friend-list-item').find('#helpStatus').removeClass('hide');
+
+		$('[data-status="3"').closest('.friend-list-item').find('#safetyButton').addClass('hide');
+		$('[data-status="3"').closest('.friend-list-item').find('#awaitingResponse').removeClass('hide');
 	},
 
 	sendMessage: function(){
 		var $this = $(this);
+		console.log($this);
+		var status = $this.closest('.friend-list-item').find('.cool').attr('data-status');
+		if(status != 'null'){
+			var lat = $this.closest('.friend-list-item').find('.cool').attr('data-lat');
+			var lon = $this.closest('.friend-list-item').find('.cool').attr('data-lon');
+			if (lat != null && lon != null){
+				Map_test.goTo(lat,lon);
+			}
+			console.log("no send");
+			console.log(status);
+			return;
+		}
+
+		$this.addClass('hide');
+		$this.closest('.friend-list-item').find('#awaitingResponse').removeClass('hide');
+		$this.closest('.friend-list-item').find('.cool').attr('data-status', 3);
+
 		var rId = $this.closest('.friend-list-item').find('.cool').attr('data-rid');
+
 		if($this.attr('id') == 'safetyButton'){
 			$.ajax({
 				url: 'assets/php/createSMS.php',
@@ -127,8 +159,8 @@ var FriendsList = {
 					if(!result.success){
 						console.log(result);
 					}else{
-						$this.addClass('hide');
-						$this.closest('.friend-list-item').find('#awaitingResponse').removeClass('hide');
+						console.log(result);
+						
 					}
 
 				}

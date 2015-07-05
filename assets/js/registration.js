@@ -15,7 +15,6 @@ var Registration = {
 		var phone = $('#phone').val();
 		var password = $('#password').val();
 
-
 		$.ajax({
 			url: 'assets/php/registration.php',
 			type: 'get',
@@ -28,7 +27,6 @@ var Registration = {
 			},
 			dataType: 'jsonp',
 			success: function( user ) {
-				console.log(user);
 				if(!user.success){
 					console.log('incorrect login');
 				}else{

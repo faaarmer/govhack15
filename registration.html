@@ -42,19 +42,19 @@
 					<h3>Register to Naya</h3>
 				</div>
 				<div class="row">
-					<form class="registration-form" data-parsley-validate>
+					<div class="registration-form">
 						<h4 class="reg-title">Basic Info</h4>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="fname">First Name</label>
-									<input id="fname" type="text" name="fname" placeholder="First Name" class="form-control" data-parsley-trigger="change" required>
+									<input id="fname" type="text" name="fname" placeholder="First Name" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="lname">Last Name</label>
-									<input id="lname" type="text" name="lname" placeholder="Last Name" class="form-control" data-parsley-trigger="change" required>
+									<input id="lname" type="text" name="lname" placeholder="Last Name" class="form-control">
 								</div>
 							</div>	
 						</div>
@@ -62,7 +62,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="phone">Mobile Phone</label>
-									<input id="phone" type="text" name="phone" placeholder="04XXXX-XXXX" class="form-control" data-parsley-trigger="change" required>
+									<input id="phone" type="text" name="phone" placeholder="04XXXX-XXXX" class="form-control">
 								</div>
 							</div>	
 						</div>
@@ -71,7 +71,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="email">Email</label>
-									<input id="email" type="email" name="email" placeholder="example@email.com" class="form-control" data-parsley-trigger="change" required>			
+									<input id="email" type="email" name="email" placeholder="example@email.com" class="form-control">			
 								</div>
 							</div>
 						</div>
@@ -79,20 +79,19 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="password">Password</label>
-									<input id="password" type="password" name="password" placeholder="Password" class="form-control" data-parsley-trigger="change" required>			
+									<input id="password" type="password" name="password" placeholder="Password" class="form-control">			
 								</div>
 							</div>
 						</div>
 						<div class="row reg-button-controls">
 							<button type="submit" class="registerBtn btn pull-right" name="register">Register</button>		
 						</div>	
-					</form>
+					</div>
 					
 				</div> <!-- /.registration-form -->
 			</div> <!-- /.container -->
 			<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   			<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  			<script src="assets/js/parsley.min.js"></script>
   			<script src="assets/js/registration.js"></script>
 		</body>
 	</html>

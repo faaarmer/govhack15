@@ -30,11 +30,11 @@
 	        $message_data = "";
 	        $message_data = explode(':',$data_line);
 	        if($message_data[0] == "OK"){
-	            echo "The message to ".$message_data[1]." was successful, with reference ".$message_data[2]."\n";
+	            return "The message to ".$message_data[1]." was successful, with reference ".$message_data[2]."\n";
 	        }elseif( $message_data[0] == "BAD" ){
-	            echo "The message to ".$message_data[1]." was NOT successful. Reason: ".$message_data[2]."\n";
+	            return "The message to ".$message_data[1]." was NOT successful. Reason: ".$message_data[2]."\n";
 	        }elseif( $message_data[0] == "ERROR" ){
-	            echo "There was an error with this request. Reason: ".$message_data[1]."\n";
+	            return "There was an error with this request. Reason: ".$message_data[1]."\n";
 	        }
 	    }
 	}

@@ -129,7 +129,7 @@
 			$destination = $friend['phone'];
 			// echo $text;
 			$smsResult =  formatSMS($destination, $text);
-			echo $smsResult;
+			// echo $smsResult;
 
 			updateStatusTable($friend);
 
