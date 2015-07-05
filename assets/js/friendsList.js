@@ -53,6 +53,11 @@ var FriendsList = {
 		});
 	},
 
+	refreshFriends: function() {
+		FriendsList.getFriends();
+		$('#friends').children().remove();
+	},
+
 	deleteFriends: function(rid){
 
 		$.ajax({
