@@ -153,6 +153,8 @@ html, body {
       transition: .15s ease-in; }
   .right-panel .right-status {
     text-align: center; }
+    .right-panel .right-status .check-button {
+      display: none; }
 
 .friends-header {
   margin-bottom: 50px; }
@@ -166,7 +168,7 @@ html, body {
   transition: all 0.2s ease-in; }
 #friends .friend-list-item #safetyButton {
   background-color: #333333;
-  color: #52ffaf; }
+  color: #cccccc; }
   #friends .friend-list-item #safetyButton:hover {
     background-color: #52ffaf;
     color: #333333; }
@@ -178,7 +180,7 @@ html, body {
   color: #333333; }
 #friends .friend-list-item #helpStatus {
   background-color: #ff133f;
-  color: #FF; }
+  color: #FFF; }
 #friends .friend-list-item #deleteButton {
   background-color: transparent;
   color: #333333;
@@ -190,6 +192,25 @@ html, body {
   color: #ff4668; }
   .parsley-errors-list li {
     list-style-type: none; }
+
+.leaflet-marker-icon.help-icon {
+  color: red !important; }
+
+.leaflet-marker-icon.ok-icon {
+  color: green !important; }
+
+.logout-container #logoutBtn {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  background-color: transparent;
+  border-color: #cccccc;
+  color: #cccccc;
+  transition: all 0.2s ease-in; }
+  .logout-container #logoutBtn:hover {
+    background-color: #333333;
+    border-color: #333333;
+    color: #ff133f; }
 
 input.form-control.add-person {
   width: 45%;
@@ -408,13 +429,5 @@ a.register:hover {
 
 .im-ok, .help-me {
   display: none; }
-
-.leaflet-marker-icon.help-icon {
-  color: red !important;
-}
-
-.leaflet-marker-icon.ok-icon {
-  color: green !important;
-}
 
 /*# sourceMappingURL=style.css.map */

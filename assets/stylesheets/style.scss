@@ -198,6 +198,9 @@ html, body {
 
     .right-status {
         text-align: center;
+        .check-button {
+          display: none;
+        }
     }
 }
 
@@ -218,7 +221,7 @@ html, body {
     #safetyButton {
       
       background-color: $light-black;
-      color: $main-color;
+      color: $light-grey;
       
       &:hover {
         background-color: $main-color;
@@ -253,6 +256,31 @@ html, body {
       list-style-type: none;
     }
   }
+
+.leaflet-marker-icon.help-icon {
+  color: red !important;
+}
+
+.leaflet-marker-icon.ok-icon {
+  color: green !important;
+}
+
+.logout-container {
+  #logoutBtn {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    background-color: transparent;
+    border-color: $light-grey;
+    color: $light-grey;
+    transition: all 0.2s ease-in;
+    &:hover {
+      background-color: $light-black;
+      border-color: $light-black;
+      color: $hot-red;
+    }
+  }
+}
 
 @import 'forms';
 @import 'login';
