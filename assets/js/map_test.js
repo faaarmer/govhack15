@@ -80,7 +80,7 @@ var Map_test = {
 			zoom: 5,
 			zoomControl: false,
 			fadeAnimation: true,
-			zoomAnimationThreshold: 6,
+			zoomAnimationThreshold: 20,
 			zoomAnimation: true,
 			markerZoomAnimation: false
 		});
