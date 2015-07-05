@@ -9,10 +9,8 @@
         return $output;    
     }
 
-    // daniel311991
-    // password1
     function formatSMS($destination, $text){
-	    $username = 'faaarmer';
+	    $username = 'daniel311991';
 	    $password = 'password1';
 	    // $destination = '0400000000'; //Multiple numbers can be entered, separated by a comma
 	    $source    = 'Naya Safety';
