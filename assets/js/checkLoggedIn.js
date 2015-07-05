@@ -20,7 +20,7 @@ var CheckLoggedIn = {
 		console.log('stored user');
 		if(CheckLoggedIn.user == null || CheckLoggedIn.user == 'null'){
 			console.log(CheckLoggedIn.user);
-			//window.location.replace("login.html");
+			window.location.replace("login.html");
 		}
 
 	}
