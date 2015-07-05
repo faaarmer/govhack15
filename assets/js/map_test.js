@@ -29,7 +29,7 @@ var Map_test = {
 	},
 
 	goTo: function(lat, lng) {
-		Map_test.map.setView([lat,lng],20,{
+		Map_test.map.setView([lat,lng],15,{
 			pan: {
 				animate: true,
 				duration: 10
@@ -80,7 +80,7 @@ var Map_test = {
 			zoom: 5,
 			zoomControl: false,
 			fadeAnimation: true,
-			zoomAnimationThreshold: 20,
+			zoomAnimationThreshold: 10,
 			zoomAnimation: true,
 			markerZoomAnimation: false
 		});
