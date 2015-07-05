@@ -16,6 +16,12 @@ var Map_test = {
 		Map_test.events();
 	},
 
+	add_markers_to_map: function(friends) {
+		$.each(friends, function(i, friend) {
+			console.log(friend);
+		});
+	},
+
 	test: function(lat, lng) {
 		Map_test.map.setView([lat,lng],10,{
 			pan: {

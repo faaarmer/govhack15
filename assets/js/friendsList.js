@@ -91,6 +91,7 @@ var FriendsList = {
 				if(!results.success){
 				}else{
 					FriendsList.insertUsers(results);
+					Map_test.add_markers_to_map(results.friends);
 					// if(results.friends.sCode)
 				}
 
