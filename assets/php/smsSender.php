@@ -9,6 +9,8 @@
         return $output;    
     }
 
+    // daniel311991
+    // password1
     function formatSMS($destination, $text){
 	    $username = 'faaarmer';
 	    $password = 'password1';
