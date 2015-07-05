@@ -41,7 +41,8 @@ var FriendsList = {
 			},
 			dataType: 'jsonp',
 			success: function( result ) {
-				if(!result.success){ console.log('NOT STORED BITCH');
+				if(!result.success){
+
 				}else{
 					FriendsList.getFriends();
 					$('#friends').children().remove();
@@ -78,7 +79,6 @@ var FriendsList = {
 	},
 
 	getFriends: function(){
-		console.log(CheckLoggedIn.user.uId);
 		$.ajax({
 			url: 'assets/php/retrieveFriends.php',
 			type: 'get',
@@ -87,12 +87,11 @@ var FriendsList = {
 			},
 			dataType: 'jsonp',
 			success: function( results ) {
-				console.log(results);
 				if(!results.success){
+					console.log(results);
 				}else{
 					FriendsList.insertUsers(results);
 					Map_test.add_markers_to_map(results.friends);
-					// if(results.friends.sCode)
 				}
 
 			}
@@ -126,7 +125,6 @@ var FriendsList = {
 
 	sendMessage: function(){
 		var $this = $(this);
-		console.log($this);
 		var status = $this.closest('.friend-list-item').find('.cool').attr('data-status');
 		if(status != 'null'){
 			var lat = $this.closest('.friend-list-item').find('.cool').attr('data-lat');
@@ -134,8 +132,6 @@ var FriendsList = {
 			if (lat != null && lon != null){
 				Map_test.goTo(lat,lon);
 			}
-			console.log("no send");
-			console.log(status);
 			return;
 		}
 
@@ -155,7 +151,6 @@ var FriendsList = {
 				},
 				dataType: 'jsonp',
 				success: function( result ) {
-					console.log(result);
 					if(!result.success){
 						console.log(result);
 					}else{

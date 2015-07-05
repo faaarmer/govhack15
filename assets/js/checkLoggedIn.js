@@ -17,9 +17,8 @@ var CheckLoggedIn = {
 		CheckLoggedIn.user = localStorage.getItem('user');
 
 		CheckLoggedIn.user = JSON.parse(CheckLoggedIn.user);
-		console.log('stored user');
+
 		if(CheckLoggedIn.user == null || CheckLoggedIn.user == 'null'){
-			console.log(CheckLoggedIn.user);
 			window.location.replace("login.html");
 		}
 
