@@ -28,8 +28,8 @@ var Map_test = {
 		});
 	},
 
-	test: function(lat, lng) {
-		Map_test.map.setView([lat,lng],10,{
+	goTo: function(lat, lng) {
+		Map_test.map.setView([lat,lng],13,{
 			pan: {
 				animate: true,
 				duration: 10
