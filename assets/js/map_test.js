@@ -19,10 +19,18 @@ var Map_test = {
 	add_markers_to_map: function(friends) {
 		$.each(friends, function(i, friend) {
 			if (friend.lat != null && friend.lon != null) {
-				if(friend.status == 1) {
-					L.marker([friend.lat, friend.lon],{title:friend.fullName}).addTo(Map_test.map);
+				if(friend.sCode == "1") {
+					var okIcon = L.divIcon( { className: 'fa fa-map-marker fa-3x ok-icon' } );
+					L.marker([friend.lat, friend.lon],{
+						title:friend.fullName, icon:okIcon
+					}).addTo(Map_test.map);
 				} else {
-					L.marker([friend.lat, friend.lon],{title:friend.fullName}).addTo(Map_test.map);
+					var helpIcon = L.divIcon( { className: 'fa fa-map-marker fa-3x help-icon' } );
+					L.marker([friend.lat, friend.lon],
+						{
+							title:friend.fullName,
+						    icon:helpIcon
+						}).addTo(Map_test.map);
 				}
 			}
 		});
@@ -39,7 +47,6 @@ var Map_test = {
 				duration: 10
 			}
 		});
-		L.marker([lat, lng]).addTo(Map_test.map);
 	},
 
 	events: function(){

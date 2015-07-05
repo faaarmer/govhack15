@@ -409,4 +409,12 @@ a.register:hover {
 .im-ok, .help-me {
   display: none; }
 
+.leaflet-marker-icon.help-icon {
+  color: red !important;
+}
+
+.leaflet-marker-icon.ok-icon {
+  color: green !important;
+}
+
 /*# sourceMappingURL=style.css.map */
