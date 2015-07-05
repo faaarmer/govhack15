@@ -34,7 +34,7 @@ var Map_test = {
 		Map_test.notificationsChannel.bind('status_change', function(data){
 		    console.log(data);
 		    L.marker([data.lat, data.lon],{title:data.relationName}).addTo(Map_test.map);
-		    friendsList.getFriends();
+		    FriendsList.getFriends();
 		});
 		$('body').on('click','.bushfires_toggle',function(e) {
 			Map_test.bushFiresLayer.toggle();
