@@ -1,5 +1,6 @@
 var Locator_page = {
 	rid: '',
+	status: '',
 	
 	init: function() {
 		Locator_page.rid = Locator_page.getUrlParameter('rid');
@@ -10,29 +11,34 @@ var Locator_page = {
 
 	events: function(){
 		$('body').on('click','.ok_button',function(e){
-			var lat = $('.lat').val();
-			var lon = $('.lon').val();
-			Locator_page.send_status(Locator_page.rid, lat, lon, 1);
+			Locator_page.status = 1;
+			Locator_page.send_status();
 			$(".you-ok").hide();
 			$(".im-ok").show();
 		})
 
 		$('body').on('click','.help_button',function(e){
-			var lat = $('.lat').val();
-			var lon = $('.lon').val();
-			Locator_page.send_status(Locator_page.rid, lat, lon, 2);
+			Locator_page.status = 2;
+			Locator_page.send_status();
 			$(".you-ok").hide();
 			$(".help-me").show();
 		})
 	},
 
-	send_status: function(rid, lat, lon, status) {
+	send_status: function() {
+		var lat = $('.lat').val();
+		var lon = $('.lon').val();
+
+		if (lon == '' && lat == '') {
+			return setTimeout(Locator_page.send_status, 1000);
+		}
+
 		$.ajax({
             url: '../assets/php/status.php',
             type: 'GET',
             data: {
-                rid: rid,
-                status: status,
+                rid: Locator_page.rid,
+                status: Locator_page.status,
                 lat: lat,
                 lon: lon
             },
