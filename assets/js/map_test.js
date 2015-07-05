@@ -29,7 +29,7 @@ var Map_test = {
 	},
 
 	goTo: function(lat, lng) {
-		Map_test.map.setView([lat,lng],13,{
+		Map_test.map.setView([lat,lng],20,{
 			pan: {
 				animate: true,
 				duration: 10

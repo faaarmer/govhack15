@@ -131,7 +131,9 @@ var FriendsList = {
 		if(status != 'null'){
 			var lat = $this.closest('.friend-list-item').find('.cool').attr('data-lat');
 			var lon = $this.closest('.friend-list-item').find('.cool').attr('data-lon');
-			Map_test.goTo(lat,lon);
+			if (lat != null && lon != null){
+				Map_test.goTo(lat,lon);
+			}
 			console.log("no send");
 			console.log(status);
 			return;
